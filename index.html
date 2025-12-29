@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>نمایش PDF</title>
+  <style>
+    body {
+      direction: rtl;
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 80px;
+    }
+    input {
+      font-size: 18px;
+      padding: 6px;
+      width: 120px;
+    }
+    button {
+      font-size: 18px;
+      padding: 6px 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h2>شماره فایل PDF را وارد کنید</h2>
+
+<input type="number" id="pdfNum" min="1" max="180">
+<button onclick="openPDF()">نمایش</button>
+
+<script>
+function openPDF() {
+  const n = document.getElementById("pdfNum").value;
+  if (n < 1 || n > 180) {
+    alert("شماره باید بین 1 تا 180 باشد");
+    return;
+  }
+  window.open(`pdfs/${n}.pdf`, "_blank");
+}
+</script>
+
+</body>
+</html>
