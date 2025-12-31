@@ -1,130 +1,104 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مشاهده ویزا | کاروان حج 26062 کرمان</title>
-  <style>
-    body {
-      direction: rtl;
-      margin: 0;
-      font-family: Tahoma, sans-serif;
-      background: linear-gradient(to bottom, #f4f7f3, #e2eee6);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 10px;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 420px;
-      background: #ffffff;
-      padding: 25px 20px 50px 20px;
-      border-radius: 16px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .logo-background {
-      position: absolute;
-      top: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 140px;
-      height: 140px;
-      background: url('logo.png') no-repeat center center;
-      background-size: contain;
-      opacity: 0.15;
-      pointer-events: none;
-    }
-
-    .logo img {
-      width: 120px;
-      margin-bottom: 15px;
-      z-index: 2;
-      position: relative;
-    }
-
-    .title {
-      font-size: 20px;
-      font-weight: bold;
-      color: #0b5d3b;
-      margin-bottom: 6px;
-    }
-
-    .subtitle {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 25px;
-      line-height: 1.6;
-    }
-
-    input {
-      width: 80%;
-      font-size: 16px;
-      padding: 10px;
-      text-align: center;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      margin-bottom: 15px;
-      outline: none;
-      transition: 0.3s;
-    }
-
-    input:focus {
-      border-color: #0b5d3b;
-      box-shadow: 0 0 5px rgba(11,93,59,0.3);
-    }
-
-    button {
-      font-size: 16px;
-      padding: 10px 25px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      background-color: #0b5d3b;
-      color: white;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background-color: #094d31;
-    }
-
-    .error {
-      color: #b00020;
-      margin-top: 10px;
-      font-size: 14px;
-      display: none;
-    }
-
-    .footer {
-      margin-top: 25px;
-      font-size: 13px;
-      color: #777;
-      line-height: 1.8;
-    }
-
-    @media (max-width: 480px) {
-      .container {
-        padding: 20px 15px 40px 15px;
-      }
-
-      input {
-        width: 90%;
-        font-size: 15px;
-      }
-
-      button {
-        font-size: 15px;
-        padding: 10px 20px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مشاهده ویزا | کاروان حج 26062 کرمان</title>
+<style>
+body {
+  direction: rtl;
+  margin: 0;
+  font-family: Tahoma, sans-serif;
+  background: linear-gradient(to bottom, #f4f7f3, #e2eee6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 10px;
+}
+.container {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 25px 20px 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.logo-background {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 140px;
+  background: url('logo.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0.15;
+  pointer-events: none;
+}
+.logo img {
+  width: 120px;
+  margin-bottom: 15px;
+  z-index: 2;
+  position: relative;
+}
+.title { font-size: 20px; font-weight: bold; color: #0b5d3b; margin-bottom: 6px; }
+.subtitle { font-size: 14px; color: #555; margin-bottom: 25px; line-height: 1.6; }
+input {
+  width: 80%;
+  font-size: 16px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+input:focus {
+  border-color: #0b5d3b;
+  box-shadow: 0 0 5px rgba(11,93,59,0.3);
+}
+button {
+  font-size: 16px;
+  padding: 10px 25px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: #0b5d3b;
+  color: white;
+  transition: 0.3s;
+}
+button:hover { background-color: #094d31; }
+.error {
+  color: #b00020;
+  margin-top: 10px;
+  font-size: 14px;
+  display: none;
+}
+.footer { margin-top: 20px; font-size: 13px; color: #777; line-height: 1.8; }
+.pdf-container { margin-top: 20px; display:none; flex-direction: column; align-items: center; }
+.pdf-frame { width: 100%; height: 500px; border: 1px solid #ccc; border-radius: 8px; }
+.download-btn {
+  margin-top: 10px;
+  padding: 12px 20px;
+  background: #0b5d3b;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  display: inline-block;
+}
+.download-btn:hover { background: #094d31; }
+@media (max-width: 480px) {
+  input { width: 90%; font-size: 15px; }
+  button { font-size: 15px; padding: 10px 20px; }
+  .pdf-frame { height: 350px; }
+}
+</style>
 </head>
 <body>
 
@@ -136,48 +110,46 @@
   </div>
 
   <div class="title">مشاهده ویزای زائر</div>
-
   <div class="subtitle">
     کاروان حج تمتع <strong>26062 کرمان</strong><br>
     مدیر کاروان: <strong>محمد ایزدی</strong><br>
     لطفاً کد زائری خود را وارد نمایید
   </div>
 
-  <input
-    type="number"
-    id="pdfNum"
-    min="1"
-    max="180"
-    placeholder="کد زائری (۱ تا ۱۸۰)"
-    onkeypress="if(event.key==='Enter'){openPDF()}"
-  >
+  <input type="number" id="pdfNum" min="1" max="180" placeholder="کد زائری (۱ تا ۱۸۰)" onkeypress="if(event.key==='Enter'){openPDF()}">
   <br>
   <button onclick="openPDF()">نمایش ویزا</button>
+  <div id="error" class="error">لطفاً عددی معتبر بین ۱ تا ۱۸۰ وارد نمایید</div>
 
-  <div id="error" class="error">
-    لطفاً عددی معتبر بین ۱ تا ۱۸۰ وارد نمایید
+  <div class="pdf-container" id="pdfContainer">
+    <iframe class="pdf-frame" id="pdfFrame"></iframe>
+    <a id="downloadBtn" class="download-btn" href="" download>دانلود ویزا</a>
   </div>
 
-  <div class="footer">
-    🌙 التماس دعا
-  </div>
+  <div class="footer">🌙 التماس دعا</div>
 </div>
 
 <script>
 function openPDF() {
   const pdfNum = document.getElementById('pdfNum').value;
   const errorDiv = document.getElementById('error');
+  const pdfContainer = document.getElementById('pdfContainer');
+  const pdfFrame = document.getElementById('pdfFrame');
+  const downloadBtn = document.getElementById('downloadBtn');
 
   if (!pdfNum || pdfNum < 1 || pdfNum > 180) {
     errorDiv.style.display = 'block';
+    pdfContainer.style.display = 'none';
     return;
   }
 
   errorDiv.style.display = 'none';
 
-  // باز کردن viewer.html در تب جدید و ارسال نام فایل PDF
-  const viewerPath = `viewer.html?file=${pdfNum}.pdf`;
-  window.open(viewerPath, '_blank');
+  const pdfPath = `pdfs/${pdfNum}.pdf`;
+  pdfFrame.src = pdfPath;
+  downloadBtn.href = pdfPath;
+  pdfContainer.style.display = 'flex';
+  pdfContainer.scrollIntoView({ behavior: 'smooth' });
 }
 </script>
 
