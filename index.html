@@ -58,10 +58,7 @@ input {
   outline: none;
   transition: 0.3s;
 }
-input:focus {
-  border-color: #0b5d3b;
-  box-shadow: 0 0 5px rgba(11,93,59,0.3);
-}
+input:focus { border-color: #0b5d3b; box-shadow: 0 0 5px rgba(11,93,59,0.3); }
 button {
   font-size: 16px;
   padding: 10px 25px;
@@ -73,24 +70,8 @@ button {
   transition: 0.3s;
 }
 button:hover { background-color: #094d31; }
-.error {
-  color: #b00020;
-  margin-top: 10px;
-  font-size: 14px;
-  display: none;
-}
+.error { color: #b00020; margin-top: 10px; font-size: 14px; display: none; }
 .footer { margin-top: 20px; font-size: 13px; color: #777; line-height: 1.8; }
-.download-link {
-  display: block;
-  margin-top: 15px;
-  font-size: 16px;
-  background: #0b5d3b;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-}
-.download-link:hover { background: #094d31; }
 @media (max-width: 480px) {
   input { width: 90%; font-size: 15px; }
   button { font-size: 15px; padding: 10px 20px; }
@@ -113,12 +94,10 @@ button:hover { background-color: #094d31; }
     لطفاً کد زائری خود را وارد نمایید
   </div>
 
-  <input type="number" id="pdfNum" min="1" max="180" placeholder="              " onkeypress="if(event.key==='Enter'){openPDF()}">
+  <input type="number" id="pdfNum" min="1" max="180" placeholder="کد زائری (۱ تا ۱۸۰)" onkeypress="if(event.key==='Enter'){openPDF()}">
   <br>
   <button onclick="openPDF()">نمایش ویزا</button>
   <div id="error" class="error">لطفاً عددی معتبر بین ۱ تا ۱۸۰ وارد نمایید</div>
-
-  <a id="downloadLink" class="download-link" href="" target="_blank" style="display:none;">دانلود ویزا</a>
 
   <div class="footer">🌙 التماس دعا</div>
 </div>
@@ -127,24 +106,17 @@ button:hover { background-color: #094d31; }
 function openPDF() {
   const pdfNum = document.getElementById('pdfNum').value;
   const errorDiv = document.getElementById('error');
-  const downloadLink = document.getElementById('downloadLink');
 
   if (!pdfNum || pdfNum < 1 || pdfNum > 180) {
     errorDiv.style.display = 'block';
-    downloadLink.style.display = 'none';
     return;
   }
 
   errorDiv.style.display = 'none';
 
-  const pdfPath = `pdfs/${pdfNum}.pdf`;
-
-  // باز کردن PDF مستقیم در تب جدید
-  window.open(pdfPath, '_blank');
-
-  // نمایش لینک دانلود زیر فرم
-  downloadLink.href = pdfPath;
-  downloadLink.style.display = 'block';
+  // باز کردن viewer.html در تب جدید با فایل PDF
+  const viewerPath = `viewer.html?file=${pdfNum}.pdf`;
+  window.open(viewerPath, '_blank');
 }
 </script>
 
