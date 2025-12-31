@@ -71,6 +71,17 @@ button {
 }
 button:hover { background-color: #094d31; }
 .error { color: #b00020; margin-top: 10px; font-size: 14px; display: none; }
+.download-btn {
+  display: none;
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: #0b5d3b;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+}
+.download-btn:hover { background: #094d31; }
 .footer { margin-top: 20px; font-size: 13px; color: #777; line-height: 1.8; }
 @media (max-width: 480px) {
   input { width: 90%; font-size: 15px; }
@@ -94,9 +105,10 @@ button:hover { background-color: #094d31; }
     لطفاً کد زائری خود را وارد نمایید
   </div>
 
-  <input type="number" id="pdfNum" min="1" max="180" placeholder="              " onkeypress="if(event.key==='Enter'){openPDF()}">
+  <input type="number" id="pdfNum" min="1" max="180" placeholder="          " onkeypress="if(event.key==='Enter'){openPDF()}">
   <br>
   <button onclick="openPDF()">مشاهده ویزا</button>
+  <a id="downloadBtn" class="download-btn" href="" download>دانلود ویزا</a>
   <div id="error" class="error">لطفاً عددی معتبر بین ۱ تا ۱۸۰ وارد نمایید</div>
 
   <div class="footer">🌙 التماس دعا</div>
@@ -106,16 +118,24 @@ button:hover { background-color: #094d31; }
 function openPDF() {
   const pdfNum = document.getElementById('pdfNum').value;
   const errorDiv = document.getElementById('error');
+  const downloadBtn = document.getElementById('downloadBtn');
 
   if (!pdfNum || pdfNum < 1 || pdfNum > 180) {
     errorDiv.style.display = 'block';
+    downloadBtn.style.display = 'none';
     return;
   }
 
   errorDiv.style.display = 'none';
 
-  // باز کردن PDF مستقیم → Chrome اندروید بدون Open اضافی
-  window.location.href = `pdfs/${pdfNum}.pdf`;
+  const pdfPath = `pdfs/${pdfNum}.pdf`;
+
+  // باز کردن PDF مستقیم در همان تب یا مرورگر اندروید
+  window.location.href = pdfPath;
+
+  // نمایش دکمه دانلود زیر فرم
+  downloadBtn.href = pdfPath;
+  downloadBtn.style.display = 'inline-block';
 }
 </script>
 
